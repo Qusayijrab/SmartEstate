@@ -1,0 +1,22 @@
+{
+  "model_type": "RandomForestClassifier",
+  "feature_columns": [
+    "no_of_dependents",
+    "education",
+    "self_employed",
+    "income_annum",
+    "loan_amount",
+    "loan_term",
+    "cibil_score"
+  ],
+  "target_column": "loan_status",
+  "n_estimators": 300,
+  "random_state": 7,
+  "train_rows": 80000,
+  "test_rows": 20000,
+  "roc_auc": 0.9995,
+  "accuracy": 0.9885,
+  "macro_f1": 0.9884,
+  "sklearn_version": "1.8.0",
+  "source_dataset": "loans_synthetic_100k.csv"
+}

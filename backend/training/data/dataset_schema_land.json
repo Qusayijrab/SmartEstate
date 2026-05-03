@@ -1,0 +1,32 @@
+{
+  "features": [
+    "district",
+    "area_name",
+    "land_area_sqm",
+    "land_type",
+    "street_width_m",
+    "main_road_access",
+    "near_services",
+    "zoning_category",
+    "zoning_score",
+    "development_level",
+    "corner_plot",
+    "shape_regular",
+    "slope_level",
+    "lat",
+    "lng"
+  ],
+  "optional_inference_field": [
+    "asking_price_jod"
+  ],
+  "targets": [
+    "estimated_market_value_jod"
+  ],
+  "derived_columns": [
+    "price_per_sqm_jod",
+    "fairness_label"
+  ],
+  "row_count": 7000,
+  "random_state": 42,
+  "note": "Synthetic district-anchored Jordan/Amman land valuation dataset with guarded price-per-sqm bands."
+}

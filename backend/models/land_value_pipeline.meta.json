@@ -1,0 +1,52 @@
+{
+  "model_type": "Pipeline(ColumnTransformer -> RandomForestRegressor)",
+  "feature_columns": [
+    "district",
+    "area_name",
+    "land_area_sqm",
+    "land_type",
+    "street_width_m",
+    "main_road_access",
+    "near_services",
+    "zoning_category",
+    "zoning_score",
+    "development_level",
+    "corner_plot",
+    "shape_regular",
+    "slope_level",
+    "lat",
+    "lng"
+  ],
+  "categorical_columns": [
+    "district",
+    "area_name",
+    "land_type",
+    "zoning_category",
+    "development_level",
+    "slope_level"
+  ],
+  "numeric_columns": [
+    "land_area_sqm",
+    "street_width_m",
+    "main_road_access",
+    "near_services",
+    "zoning_score",
+    "corner_plot",
+    "shape_regular",
+    "lat",
+    "lng"
+  ],
+  "target_column": "estimated_market_value_jod",
+  "n_estimators": 260,
+  "max_depth": 16,
+  "random_state": 42,
+  "train_rows": 5600,
+  "test_rows": 1400,
+  "n_total_rows": 7000,
+  "metrics": {
+    "mae_jod": 83260.02,
+    "r2": 0.9136
+  },
+  "sklearn_version": "1.8.0",
+  "source_dataset": "synthetic_land_data.csv"
+}

@@ -1,0 +1,52 @@
+{
+  "Abdoun": {
+    "base_sqm": 1200,
+    "lat": 31.9497,
+    "lon": 35.8878
+  },
+  "Dabouq": {
+    "base_sqm": 1100,
+    "lat": 31.978,
+    "lon": 35.8325
+  },
+  "Khalda": {
+    "base_sqm": 900,
+    "lat": 31.995,
+    "lon": 35.8402
+  },
+  "Sweifieh": {
+    "base_sqm": 950,
+    "lat": 31.957,
+    "lon": 35.8581
+  },
+  "Shmeisani": {
+    "base_sqm": 850,
+    "lat": 31.9698,
+    "lon": 35.8928
+  },
+  "Jubeiha": {
+    "base_sqm": 700,
+    "lat": 32.0138,
+    "lon": 35.8696
+  },
+  "Tla Al Ali": {
+    "base_sqm": 800,
+    "lat": 32.0058,
+    "lon": 35.8645
+  },
+  "Marj Al Hamam": {
+    "base_sqm": 650,
+    "lat": 31.8944,
+    "lon": 35.8282
+  },
+  "Deir Ghbar": {
+    "base_sqm": 1050,
+    "lat": 31.933,
+    "lon": 35.8615
+  },
+  "Al Rabieh": {
+    "base_sqm": 980,
+    "lat": 31.9823,
+    "lon": 35.8711
+  }
+}

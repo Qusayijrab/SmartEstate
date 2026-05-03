@@ -1,0 +1,34 @@
+{
+  "model_type": "Pipeline(ColumnTransformer -> RandomForestRegressor)",
+  "numeric_columns": [
+    "area",
+    "bedrooms",
+    "bathrooms",
+    "floor",
+    "building_age",
+    "latitude",
+    "longitude",
+    "condition_score"
+  ],
+  "categorical_columns": [
+    "city",
+    "district",
+    "neighborhood",
+    "property_type",
+    "furnished"
+  ],
+  "target_column": "price_jod",
+  "n_estimators": 320,
+  "max_depth": 22,
+  "random_state": 42,
+  "train_rows": 2800,
+  "test_rows": 700,
+  "n_total_rows": 3500,
+  "metrics": {
+    "mae_jod": 12952.26,
+    "rmse_jod": 16984.79,
+    "r2": 0.9198
+  },
+  "sklearn_version": "1.8.0",
+  "source_dataset": "amman_synthetic_prices.csv"
+}
