@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  fullName     String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("buyer")
+  avatarUrl    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  listings    Listing[]
+  favorites   Favorite[]
+  comparisons CompareListing[]
+}
+
+model Listing {
+  id                Int      @id @default(autoincrement())
+  slug              String   @unique
+  ownerId           Int
+  title             String
+  propertyType      String
+  price             Float
+  location          String
+  areaName          String
+  bedrooms          Int      @default(0)
+  bathrooms         Int      @default(0)
+  size              Float
+  floor             String?
+  buildingAge       String?
+  description       String?
+  extrasJson        String   @default("[]")
+  imagesJson        String   @default("[]")
+  aiPricing         String   @default("no")
+  estimatedYield    Float?
+  demandScore       Float?
+  aiConfidence      Float?
+  nearbyDevelopment String?
+  sellerNote        String?  @default("Ready for buyer inquiries")
+  status            String   @default("available")
+  verified          Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  owner       User              @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  favorites   Favorite[]
+  comparisons CompareListing[]
+}
+
+model Favorite {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  listingId Int
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, listingId], name: "userId_listingId")
+}
+
+model CompareListing {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  listingId Int
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, listingId], name: "userId_listingId")
+}
